@@ -1,0 +1,10 @@
+.login-container {
+    text-align: center;
+}
+.login {
+    margin: 10rem;
+}
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+}
