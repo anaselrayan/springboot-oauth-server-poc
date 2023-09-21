@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,8 +27,8 @@ public class TestService {
                 .principal("serverapp")
                 .build();
 
-        OAuth2AuthorizedClient client = oAuth2AuthorizedClientManager.authorize(request);
-
+        OAuth2AuthorizedClient client =
+                oAuth2AuthorizedClientManager.authorize(request);
         String token = client.getAccessToken().getTokenValue();
         return sendRequest(url, token);
     }
