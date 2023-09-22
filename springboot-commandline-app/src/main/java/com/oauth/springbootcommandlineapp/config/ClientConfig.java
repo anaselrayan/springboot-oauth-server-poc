@@ -47,7 +47,7 @@ public class ClientConfig {
         .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
         .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
         .tokenUri("http://localhost:9000/oauth2/token")
-        .scope("read")
+        .scope("read").scope("access.admin")
         .build();
 
     return new InMemoryClientRegistrationRepository(c1);

@@ -76,7 +76,7 @@ public class AuthServerConfig {
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .scope("read")
+                .scope("read").scope("access.admin")
                 .tokenSettings(TokenSettings.builder()
                         .accessTokenTimeToLive(Duration.ofHours(2))
                         .build())

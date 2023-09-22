@@ -30,7 +30,7 @@ public class SecurityConfig {
         });
 
         http.authorizeHttpRequests(auth -> {
-            auth.requestMatchers("/hello-admin").hasRole("ADMIN");
+            auth.requestMatchers("/hello-admin").hasAnyRole("ADMIN", "access.admin");
             auth.requestMatchers("/info").permitAll();
             auth.anyRequest().authenticated();
         });
